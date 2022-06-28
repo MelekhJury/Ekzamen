@@ -63,10 +63,10 @@ class Gardener:
 
     # Собираем урожай
     def harvest(self):
-        print('Садовник собирает урожай...')
+        print(f'Садовник {self.name} собирает урожай...')
         if self._plant.all_are_ripe():
             self._plant.give_away_all()
-            print('Садовник собрал урожай')
+            print(f'Cадовник {self.name} собрал урожай')
         else:
             print('Собирать урожай пока рано.')
 
@@ -75,7 +75,7 @@ class Gardener:
     @staticmethod
     def knowledge_base():
         print('''Время сбора урожая наступает когда помидор полностью созрел(Красный).
-        Стадии мутации помидора: Ничего,
+        Стадии роста   помидора: Ничего,
                                  Цветок,
                                  Зелёный помидор,
                                  Красный помидор''')
@@ -84,6 +84,7 @@ class Gardener:
 # Тесты
 if __name__ == '__main__':
     Gardener.knowledge_base()
+    print("Посадили помидоры")
     great_tomato_bush = TomatoBush(4)
     gardener = Gardener('Хулио', great_tomato_bush)
     gardener.work()
